@@ -1,9 +1,9 @@
 { config, pkgs, ... }: {
 
   imports = [
-    ../modules/base.nix
-    ../modules/dwm.nix
-    ../modules/neovim.nix
+    ./modules/base.nix
+    ./modules/dwm.nix
+    ./modules/neovim.nix
   ];
 
   modules.base.enable = true;
@@ -13,5 +13,6 @@
   home.packages = with pkgs; [
     dmenu
     brave
+    hledger
   ];
 }
