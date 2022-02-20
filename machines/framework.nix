@@ -5,7 +5,7 @@
 { config, pkgs, ... }: {
   imports = [ 
     <home-manager/nixos>
-    ../hardware-configuration.nix  # Include the results of the hardware scan.
+    /etc/nixos/hardware-configuration.nix  # Include the results of the hardware scan.
 
     ../hardware/x11.nix
     ../hardware/sound.nix
