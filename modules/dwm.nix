@@ -23,9 +23,14 @@ with lib; {
       })
     ];
 
-    home.packages = with pkgs; [ pkgs.dwm pkgs.st ];
+    home.packages = with pkgs; [
+      dwm
+      st
+      pamixer
+    ];
 
     xsession.enable = true;
+    xsession.initExtra = "~/.config/dwm/dwm_bar/dwm_bar.sh &";
     xsession.windowManager.command = "dwm";
 
     #services.picom.enable = true;

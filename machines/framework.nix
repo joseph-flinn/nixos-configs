@@ -27,8 +27,8 @@
 
   networking.useDHCP = false;
   networking.interfaces.wlp170s0.useDHCP = true;
-  networking.interfaces.enp0s13f0u4u2.useDHCP = true;
-  networking.interfaces.enp0s13f0u4u3.useDHCP = true;
+  #networking.interfaces.enp0s13f0u4u2.useDHCP = true;
+  #networking.interfaces.enp0s13f0u4u3.useDHCP = true;
 
   users.users.joseph = {
     isNormalUser = true;

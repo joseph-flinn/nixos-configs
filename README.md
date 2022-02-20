@@ -36,10 +36,18 @@ ln -s machine/framework.nix configuration.nix
 nixos-rebuild switch
 ```
 
-The `wpa_supplicant` will probably fail since `/etc/wpa_supplicant.conf` probably doesn't exist.
+The `wpa_supplicant` will probably fail since `/etc/wpa_supplicant.conf` probably doesn't exist. Create a file that conatins the following:
 
 ```
-wpa_passphrase <ESSID> <Passsword> > /etc/wpa_supplicant.conf
+ctrl_interface=/run/wpa_supplicant
+ctrl_interface_group=wheel
+update_config=1
+```
+
+And then run the below commands to finish populating it and restart the service
+
+```
+wpa_passphrase <ESSID> <Passsword> >> /etc/wpa_supplicant.conf
 systemctl restart wpa_supplicant.service
 ```
 
