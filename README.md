@@ -36,16 +36,25 @@ ln -s machine/framework.nix configuration.nix
 nixos-rebuild switch
 ```
 
+The `wpa_supplicant` will probably fail since `/etc/wpa_supplicant.conf` probably doesn't exist.
+
+```
+wpa_passphrase <ESSID> <Passsword> > /etc/wpa_supplicant.conf
+systemctl restart wpa_supplicant.service
+```
+
+
 # NixOS Generation Cleanup
 
 With the named profiles (built with `nixos-rebuild switch -p test`), sometimes they stick around in
-GRUB when you don't want them to and `nix-collect-garbage -d` doesn't delete them. The below will 
-delete them forever.
+GRUB when you don't want them to and `nix-collect-garbage -d` doesn't delete them. 
 
 ```
 sudo nix-env --delete-generations old --profile /nix/var/nix/profiles/system
 sudo /nix/var/nix/profiles/system/bin/switch-to-configuration switch.
 ```
+
+Then might not get all of the profiles that have been manually created. To clean those ones:
 
 ```
 # https://github.com/NixOS/nixpkgs/issues/3542#issuecomment-570490137 

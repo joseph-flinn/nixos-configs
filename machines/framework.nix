@@ -22,10 +22,11 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_5_15;
 
-  networking.networkmanager.enable = true;
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.networkmanager.enable = true;
+  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   networking.useDHCP = false;
+  networking.interfaces.wlp170s0.useDHCP = true;
   networking.interfaces.enp0s13f0u4u2.useDHCP = true;
   networking.interfaces.enp0s13f0u4u3.useDHCP = true;
 
