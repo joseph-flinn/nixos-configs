@@ -33,7 +33,7 @@
   users.users.joseph = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    shell = pkgs.zsh;
+    shell = pkgs.bash;
   };
 
   hardware.x11.dpi = 120;
@@ -44,7 +44,12 @@
   hardware.keyboard.enable = true;
   hardware.mouse.enable = true;
 
-  home-manager.users.joseph = import ../home/framework-joseph.nix;
+  #home-manager.users.joseph = import ../home/framework-joseph.nix;
+
+  # System wide packages
+  environment.systemPackages = with pkgs; [
+    home-manager
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

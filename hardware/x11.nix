@@ -24,5 +24,9 @@ with lib; {
     hardware.video.hidpi.enable = config.hardware.x11.dpi > 100;
 
     services.xserver.layout = config.hardware.x11.layout;
+
+    #environment.systemPackages = with pkgs; [
+    #  xorg.xbacklight
+    #];
   };
 }
