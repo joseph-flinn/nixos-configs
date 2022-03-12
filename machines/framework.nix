@@ -32,7 +32,7 @@
 
   users.users.joseph = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "dialout" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.bash;
   };
 
