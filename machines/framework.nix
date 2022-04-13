@@ -7,7 +7,7 @@
     <home-manager/nixos>
     /etc/nixos/hardware-configuration.nix  # Include the results of the hardware scan.
 
-    ../hardware/x11.nix
+    ../hardware/screen.nix
     ../hardware/sound.nix
     ../hardware/bluetooth.nix
     ../hardware/keyboard.nix
@@ -32,7 +32,7 @@
 
   users.users.joseph = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "dialout" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "dialout" "video" ];
     shell = pkgs.bash;
   };
 
@@ -43,8 +43,6 @@
   hardware.bluetooth.enable = true;
   hardware.keyboard.enable = true;
   hardware.mouse.enable = true;
-
-  #home-manager.users.joseph = import ../home/framework-joseph.nix;
 
   # System wide packages
   environment.systemPackages = with pkgs; [
