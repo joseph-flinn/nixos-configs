@@ -32,7 +32,7 @@
 
   users.users.joseph = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "dialout" "video" ];
+    extraGroups = [ "wheel" "dialout" "video" "docker" ];
     shell = pkgs.bash;
   };
 
