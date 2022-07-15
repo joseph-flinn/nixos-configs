@@ -46,6 +46,24 @@
   hardware.keyboard.enable = true;
   hardware.mouse.enable = true;
 
+  security.pki.certificates = [
+  ''
+    Local K8s Cluster Issuer Root CA
+    ================================
+    -----BEGIN CERTIFICATE-----
+    MIIBezCCASKgAwIBAgIQHZf5eBpi5Z/WBPLvPuyTGDAKBggqhkjOPQQDAjAeMRww
+    GgYDVQQDExNsb2NhbC1zZWxmc2lnbmVkLWNhMB4XDTIyMDExNDE2MzEyNloXDTIy
+    MDQxNDE2MzEyNlowHjEcMBoGA1UEAxMTbG9jYWwtc2VsZnNpZ25lZC1jYTBZMBMG
+    ByqGSM49AgEGCCqGSM49AwEHA0IABC75PkiB2JS50lW361jFD4oOY28Blct4+mRc
+    a4lrCC50JAP2VuWIQHBxp8fkmpzqp4H775GUKKN/w8Wwxky4rLOjQjBAMA4GA1Ud
+    DwEB/wQEAwICpDAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBQtLlEhSwXp3Co+
+    QaiDhS+78G49kDAKBggqhkjOPQQDAgNHADBEAiARVXcakceMJd4S0+rKIZTC/OYv
+    J0iGG5TriNmOMiX03AIgY1YHpRbPL9vTJwf6v2KHlT/PzQzJcVkgfiq/wcM9azg=
+    -----END CERTIFICATE-----
+
+  ''
+  ];
+
   # System wide packages
   environment.systemPackages = with pkgs; [
     home-manager
